@@ -16,7 +16,7 @@ TBD
 
 ## Data
 
-The data comes from the [University of Califonia Irvine Machine Learning
+The data comes from the [University of California Irvine Machine Learning
 Repository][uci] and can be found at the [Wine Quality Data Set][wine].
 
 The data has two datasets: one related to red wine, another is for white wine.
