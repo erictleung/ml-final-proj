@@ -6,7 +6,8 @@ quality based on physiochemical measurements.
 
 ## Prerequisites
 
-TBD
+- `cURL`
+- `make`
 
 
 ## Run Analysis
