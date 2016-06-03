@@ -21,6 +21,10 @@ download :
 	curl -o $(rawDir)$(whiteWine) $(baseURL)$(whiteWine)
 	curl -o $(rawDir)$(descriptWine) $(baseURL)$(descriptWine)
 
+# Run analysis and compile report
+report : download
+	Rscript -e "rmarkdown::render('./report/leung-final-report.Rmd')"
+
 clean :
 	rm ./raw-data/*
 	rmdir raw-data
