@@ -1,7 +1,7 @@
 ---
 title: Predicting Wine Quality and Wine Type
 author: Eric Leung
-date: \date{}
+date: 2016 June 17th
 output: 
   pdf_document: 
     toc: yes
@@ -10,13 +10,13 @@ bibliography: refs.bib
 
 # Introduction
 
-```{r Load Packages, echo=FALSE}
+```{r Load Packages, echo=FALSE, message=FALSE}
 # Load packages
 require(ggplot2)
 require(dplyr)
 ```
 
-```{r Source}
+```{r Source, echo=FALSE}
 source("../bin/load_data.R")
 ```
 
