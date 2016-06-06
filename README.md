@@ -34,10 +34,10 @@ and ten.
 ## Questions Asked (Draft)
 
 - Putting the data together, can we distinguish between white and red wine?
-- Can we predict wine quality based on the input variables?
+- Can we predict perceived wine quality based on the input variables?
 - Are there any variables that contain redundant information? (In other words,
   are there any correlative variables?)
-- What variables are most important in predicting wine quality?
+- What variables are most important in predicting perceived wine quality?
 
 
 ## Repository Structure
