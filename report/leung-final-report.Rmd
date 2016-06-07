@@ -6,6 +6,7 @@ output:
   pdf_document: 
     toc: yes
 bibliography: refs.bib
+classoption: twocolumn
 ---
 
 # Introduction
