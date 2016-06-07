@@ -9,8 +9,6 @@ bibliography: refs.bib
 classoption: twocolumn
 ---
 
-# Introduction
-
 ```{r Load Packages, echo=FALSE, message=FALSE}
 # Load packages
 require(ggplot2)
@@ -20,6 +18,19 @@ require(dplyr)
 ```{r Source, echo=FALSE}
 source("../bin/load_data.R")
 ```
+
+# Introduction
+
+# Data
+
+I used the Wine Quality Data Set. This data comes from Dr. Paulo Cortez and
+their pursuit to predict wine quality preferences [@cortez2009modeling]. The
+data was downloaded from the UCI Machine Learning Repository [@lichman2013uci].
+
+The data analyzed included two datasets, one related to red *vinho verde* and
+the other related to white *vinho verde*. Each of the two datasets contain
+twelve variables, one of which was the participant's quality score for that wine
+[@lichman2013uci].
 
 # Methods
 
