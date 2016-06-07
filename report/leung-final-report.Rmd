@@ -32,6 +32,28 @@ the other related to white *vinho verde*. Each of the two datasets contain
 twelve variables, one of which was the participant's quality score for that wine
 [@lichman2013uci].
 
+The red wine dataset has `r nrow(red)` samples while the white wine dataset has
+`r nrow(white)` samples. It was not clear from the reference paper on how they
+collected the data besides being tested "at the official certification entity
+(CVRVV)" [@cortez2009modeling].
+
+The physicochemical variables available are:
+
+1. fixed acidity (g(tartaric acid)/dm^3^)
+2. volatile acidity (g(acetic acid)/dm^3^)
+3. citric acid (g/dm^3^)
+4. residual sugar (g/dm^3^)
+5. chlorides (g(sodium chloride)/dm^3^)
+6. free sulfur dioxide (mg/dm^3^)
+7. total sulfur dioxide (mg/dm^3^)
+8. density (g/cm^3^)
+9. pH
+10. sulphates (g(potassium sulphate)/dm^3^)
+11. alcohol (vol.%)
+
+These variables will be used in my machine learning methods.
+
+
 # Methods
 
 # Results
