@@ -30,6 +30,18 @@ load_data <- function() {
 }
 ```
 
+# Abstract
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tristique
+tortor eget ipsum porttitor consequat. Cras varius quam dui, a suscipit diam
+pellentesque ut. Aliquam malesuada elementum tellus, ac feugiat nulla. Phasellus
+facilisis viverra consectetur. Donec ullamcorper hendrerit ultrices. Vestibulum
+tempus mauris nec felis condimentum, a interdum tortor ullamcorper. Sed vel eros
+mauris. Nulla laoreet hendrerit lacus, vel efficitur magna fringilla eu. Fusce
+vestibulum sodales leo, at suscipit lectus. Maecenas eu ultricies erat, nec
+porta purus.
+
+
 # Introduction
 
 # Data
