@@ -41,7 +41,16 @@ porta purus.
 
 # Introduction
 
-# Data
+# Wine Dataset
+
+```{r EDA, echo=FALSE}
+red <- red %>% mutate(type = "red")
+white <- white %>% mutate(type = "white")
+wines <- bind_rows(red, white)
+```
+
+
+## Description
 
 I used the Wine Quality Data Set. This data comes from Dr. Paulo Cortez and
 their pursuit to predict wine quality preferences [@cortez2009modeling]. The
@@ -52,12 +61,15 @@ the other related to white *vinho verde*. Each of the two datasets contain
 twelve variables, one of which was the participant's quality score for that wine
 [@lichman2013uci].
 
+
+## Wine Characteristics
+
 The red wine dataset has `r nrow(red)` samples while the white wine dataset has
 `r nrow(white)` samples. It was not clear from the reference paper on how they
 collected the data besides being tested "at the official certification entity
 (CVRVV)" [@cortez2009modeling].
 
-The physicochemical variables available are:
+The available physicochemical variables are:
 
 1. fixed acidity (g(tartaric acid)/dm^3^)
 2. volatile acidity (g(acetic acid)/dm^3^)
@@ -74,7 +86,15 @@ The physicochemical variables available are:
 These variables will be used in my machine learning methods.
 
 
+## Exploratory Data Analysis
+
 # Methods
+
+## Decision Trees
+
+## Support Vector Machine
+
+## Naive Bayes Classifier
 
 # Results
 
