@@ -16,7 +16,18 @@ require(dplyr)
 ```
 
 ```{r Source, echo=FALSE}
-source("../bin/load_data.R")
+# Load data
+load_data <- function() {
+    red <- read.table(file = "../raw-data/winequality-red.csv",
+                      header = TRUE,
+                      stringsAsFactors = FALSE,
+                      sep = ";") %>% tbl_df()
+    white <- read.table(file = "../raw-data/winequality-white.csv",
+                        header = TRUE,
+                        stringsAsFactors = FALSE,
+                        sep = ";") %>% tbl_df()
+    list(red=red, white=white)
+}
 ```
 
 # Introduction
