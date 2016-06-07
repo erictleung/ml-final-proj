@@ -13,6 +13,7 @@ classoption: twocolumn
 # Load packages
 require(ggplot2)
 require(dplyr)
+require(corrplot)
 ```
 
 ```{r Source, echo=FALSE}
