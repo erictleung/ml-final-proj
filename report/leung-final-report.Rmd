@@ -111,6 +111,22 @@ winesCorr <- wines %>% select(-type) %>% cor
 winesCorr %>% corrplot(type="lower")
 ```
 
+Figures 1, 2, and 3 show heatmaps generated from correlation matrices from just
+white wine data, just red wine data, and the combination of both wines into one.
+
+
+## Normality and Skew
+
+Skew: fixed.acidity, volatile.acidity, residual.sugar(?), chlorides
+citric.acid: outliers
+free.sulfur.dioxide: outliers
+sulfur.dioxide: outliers
+density: outliers
+pH: good
+sulphates: outliers
+alcohol: good
+quality: good
+
 # Methods
 
 ## Decision Trees
