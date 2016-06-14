@@ -4,6 +4,7 @@ author: Eric Leung
 date: 2016 June 17th
 output: 
   pdf_document: 
+    fig_caption: yes
     toc: yes
 bibliography: refs.bib
 classoption: twocolumn
@@ -92,6 +93,20 @@ These variables will be used in my machine learning methods.
 
 
 ## Exploratory Data Analysis
+
+### Correlations
+
+```{r fig.cap="Heatmap of variable correlations for the red wine data", fig.lp="red"}
+red %>% select(-type) %>% cor %>% corrplot(order="hclust", type="lower")
+```
+
+```{r fig.cap="Heatmap of variable correlations for the white wine data", fig.lp="white"}
+white %>% select(-type) %>% cor %>% corrplot(order="hclust", type="lower")
+```
+
+```{r fig.cap="Heatmap of variable correlations for the all wine data", fig.lp="wines"}
+wines %>% select(-type) %>% cor %>% corrplot(order="hclust", type="lower")
+```
 
 # Methods
 
