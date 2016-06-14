@@ -9,14 +9,18 @@ bibliography: refs.bib
 classoption: twocolumn
 ---
 
-```{r Load Packages, echo=FALSE, message=FALSE}
+```{r include=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE)
+```
+
+```{r Load Packages}
 # Load packages
 require(ggplot2)
 require(dplyr)
 require(corrplot)
 ```
 
-```{r Source, echo=FALSE}
+```{r Source}
 # Load data
 red <- read.table(file = "../raw-data/winequality-red.csv",
                   header = TRUE,
@@ -44,7 +48,7 @@ porta purus.
 
 # Wine Dataset
 
-```{r EDA, echo=FALSE}
+```{r EDA}
 red <- red %>% mutate(type = "red")
 white <- white %>% mutate(type = "white")
 wines <- bind_rows(red, white)
