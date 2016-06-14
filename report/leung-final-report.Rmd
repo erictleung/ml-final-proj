@@ -96,16 +96,19 @@ These variables will be used in my machine learning methods.
 
 ### Correlations
 
-```{r fig.cap="Heatmap of variable correlations for the red wine data", fig.lp="red"}
-red %>% select(-type) %>% cor %>% corrplot(order="hclust", type="lower")
+```{r red, fig.cap="Heatmap of variable correlations for the red wine data"}
+redCorr <- red %>% select(-type) %>% cor
+redCorr %>% corrplot(type="lower")
 ```
 
-```{r fig.cap="Heatmap of variable correlations for the white wine data", fig.lp="white"}
-white %>% select(-type) %>% cor %>% corrplot(order="hclust", type="lower")
+```{r fig.cap="Heatmap of variable correlations for the white wine data"}
+whiteCorr <- white %>% select(-type) %>% cor
+whiteCorr %>% corrplot(type="lower")
 ```
 
-```{r fig.cap="Heatmap of variable correlations for the all wine data", fig.lp="wines"}
-wines %>% select(-type) %>% cor %>% corrplot(order="hclust", type="lower")
+```{r fig.cap="Heatmap of variable correlations for the all wine data"}
+winesCorr <- wines %>% select(-type) %>% cor
+winesCorr %>% corrplot(type="lower")
 ```
 
 # Methods
