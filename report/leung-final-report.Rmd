@@ -18,6 +18,11 @@ knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE)
 figure1 <- "Heatmap of variable correlations for the red wine data"
 figure2 <- "Heatmap of variable correlations for the white wine data"
 figure3 <- "Heatmap of variable correlations for all wine data"
+figure4 <- "Distribution of pH values for all wine data"
+figure5 <- "Distribution of citric acid values for all wine data"
+figure6 <- "Distribution of raw chloride values for all wine data"
+figure7 <- paste("Distribution of the natural log transformation of chloride",
+               "values for all wine data")
 ```
 
 
@@ -124,15 +129,55 @@ white wine data, just red wine data, and the combination of both wines into one.
 
 ## Normality and Skew
 
-Skew: fixed.acidity, volatile.acidity, residual.sugar(?), chlorides
-citric.acid: outliers
-free.sulfur.dioxide: outliers
-sulfur.dioxide: outliers
-density: outliers
-pH: good
-sulphates: outliers
-alcohol: good
-quality: good
+I will now take a look at the data to see and note any unusual samples or
+attributes. All of our attributes are numerical, except for the wine type. For
+simplicity, we will assume and transform our data to as close to a normal
+distribution as possible.
+
+```{r fig.cap=figure4}
+wines %>% ggplot(aes(pH)) + geom_histogram() + ylab("Count")
+```
+
+The variables pH and quality appear to be normal enough. Shown in Figure 4
+is the distribution of pH values. The distribution appears good enough to be
+normal. The values for quality follow a similar distribution.
+
+```{r fig.cap=figure5}
+wines %>% ggplot(aes(citric.acid)) + geom_histogram() + ylab("Count")
+```
+
+There are six attributes which have outliers. These attributes are citric acid
+concentration, free sulfur dioxide concentration, total sulfur dioxide, sulfur
+dioxide concentration, density, and sulphates concentration. Figure 5 shows a
+plot of the citric acid distribution, whereby you can see the bulk of the
+distribution and extreme values to the right. The other three attribute with
+outliers have similar shapes. Despite having outliers, the overall distribution
+of these attributes follows a normal distribution.
+
+```{r fig.cap=figure6}
+wines %>% ggplot(aes(chlorides)) + geom_histogram() + ylab("Count")
+```
+
+```{r fig.cap=figure7}
+wines %>% ggplot(aes(chlorides %>% log)) + geom_histogram() +
+    xlab("Chloride Content") + ylab("Count")
+```
+
+Lastly, there are four attributes which have enough skew in their distribution 
+which warrent a transformation. These attributes are fixed acidity, volatile 
+acidity, residual sugar content, and chlorides. Figure 6 shows the raw values 
+for chloride. The distribution of chloride values is highly skews and will be 
+logarithm transformed to take a more normal distribution. The result of a
+natural logarithm transformation is shown in Figure 7.
+
+```{r}
+wines <- wines %>%
+    mutate(fixed.acidity = log(fixed.acidity)) %>%
+    mutate(volatile.acidity = log(volatile.acidity)) %>%
+    mutate(residual.sugar = log(residual.sugar)) %>%
+    mutate(chlorides = log(chlorides))
+```
+
 
 # Methods
 
