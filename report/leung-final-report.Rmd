@@ -77,7 +77,8 @@ data was downloaded from the UCI Machine Learning Repository [@lichman2013uci].
 The data analyzed included two datasets, one related to red *vinho verde* and
 the other related to white *vinho verde*. Each of the two datasets contain
 twelve variables, one of which was the participant's quality score for that wine
-[@lichman2013uci].
+[@lichman2013uci]. This analysis will use both datasets, either in one dataset
+or two separate datasets and focusing on one type of wine.
 
 
 ## Wine Characteristics
@@ -101,7 +102,7 @@ The available physicochemical variables are:
 10. sulphates (g(potassium sulphate)/dm^3^)
 11. alcohol (vol.%)
 
-These variables will be used in my machine learning methods.
+These variables will be used in the machine learning analysis.
 
 
 ## Exploratory Data Analysis
