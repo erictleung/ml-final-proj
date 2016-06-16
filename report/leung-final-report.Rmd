@@ -193,6 +193,12 @@ wines <- wines %>%
 
 # Results
 
+## Predict Red and White Wine
+
+I hypothesize that there are enough physicochemical differences between red and
+white wines that a learning algorithm will be able to differentiate between the
+two.
+
 # Discussion
 
 # References
