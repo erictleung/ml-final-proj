@@ -31,6 +31,7 @@ figure7 <- paste("Distribution of the natural log transformation of chloride",
 require(ggplot2)
 require(dplyr)
 require(corrplot)
+require(cvTools)
 ```
 
 ```{r Source}
