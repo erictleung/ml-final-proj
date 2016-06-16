@@ -62,9 +62,11 @@ porta purus.
 # Wine Dataset
 
 ```{r EDA}
-red <- red %>% mutate(type = "red")
-white <- white %>% mutate(type = "white")
-wines <- bind_rows(red, white)
+redType <- red %>% mutate(type = "red")
+whiteType <- white %>% mutate(type = "white")
+wines <- bind_rows(redType, whiteType)
+randomizeRows <- sample(seq(1, nrow(wines)), nrow(wines))
+wines <- wines[randomizeRows, ]
 ```
 
 
