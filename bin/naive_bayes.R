@@ -16,7 +16,7 @@ calc_params <- function(train, res) {
     means <- colMeans(train)
     std <- apply(X = train, MARGIN = 2, FUN = sd)
 
-    list(means=means, std=std)
+    list(means = means, std = std)
 }
 
 #' Train Naive Bayes
@@ -73,7 +73,7 @@ naive_test <- function(test, res, params) {
         results[i, 3] <- results[i, 1] == results[i, 2]  # correct or not
     }
     error <- 1 - mean(results$results[, 3])  # find error of prediction
-    list(results=results, error=error)
+    list(results = results, error = error)
 }
 
 #' Perform Cross-Validation Naive Bayes

@@ -114,17 +114,17 @@ These variables will be used in the machine learning analysis.
 
 ```{r red, fig.cap=figure1}
 redCorr <- red %>% select(-type) %>% cor
-redCorr %>% corrplot(type="lower")
+redCorr %>% corrplot(type = "lower")
 ```
 
 ```{r fig.cap=figure2}
 whiteCorr <- white %>% select(-type) %>% cor
-whiteCorr %>% corrplot(type="lower")
+whiteCorr %>% corrplot(type = "lower")
 ```
 
 ```{r fig.cap=figure3}
 winesCorr <- wines %>% select(-type) %>% cor
-winesCorr %>% corrplot(type="lower")
+winesCorr %>% corrplot(type = "lower")
 ```
 
 Figures 1, 2, and 3 show heatmaps generated from correlation matrices from just
