@@ -10,7 +10,7 @@ bibliography: refs.bib
 classoption: twocolumn
 ---
 
-```{r include=FALSE}
+```{r Knitr Options include=FALSE}
 knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE)
 ```
 
@@ -62,7 +62,7 @@ porta purus.
 
 # Wine Dataset
 
-```{r EDA}
+```{r Format Data}
 redType <- red %>% mutate(type = "red")
 whiteType <- white %>% mutate(type = "white")
 wines <- bind_rows(redType, whiteType)
