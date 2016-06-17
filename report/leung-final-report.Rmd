@@ -202,6 +202,7 @@ white wines that a learning algorithm will be able to differentiate between the
 two.
 
 ```{r}
+source("../bin/splitdf.R")
 source("../bin/naive_bayes.R")
 ```
 
