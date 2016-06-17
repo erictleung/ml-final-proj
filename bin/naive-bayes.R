@@ -1,5 +1,5 @@
 require(cvTools)
-source(file = "splitdf.R")
+if (!exists("splitdf", mode = "function")) source("splitdf.R")
 
 #' Calculate Parameters for Naive Bayes
 #'

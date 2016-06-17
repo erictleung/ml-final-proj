@@ -1,5 +1,5 @@
 require(rpart)
-source("../bin/splitdf.R")
+if (!exists("splitdf", mode = "function")) source("splitdf.R")
 
 run_decision_tree <- function(data, response) {
     splits <- splitdf(dataframe = data, trainSplit = 0.75, seed = 1111)
