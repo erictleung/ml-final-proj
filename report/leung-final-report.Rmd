@@ -174,7 +174,7 @@ for chloride. The distribution of chloride values is highly skews and will be
 logarithm transformed to take a more normal distribution. The result of a
 natural logarithm transformation is shown in Figure 7.
 
-```{r}
+```{r Normalize Data}
 wines <- wines %>%
     mutate(fixed.acidity = log(fixed.acidity)) %>%
     mutate(volatile.acidity = log(volatile.acidity)) %>%
@@ -184,6 +184,8 @@ wines <- wines %>%
 
 
 # Methods
+
+## Linear Regression
 
 ## Decision Trees
 
@@ -198,6 +200,11 @@ wines <- wines %>%
 I hypothesize that there are enough physicochemical differences between red and
 white wines that a learning algorithm will be able to differentiate between the
 two.
+
+```{r}
+source("../bin/naive_bayes.R")
+```
+
 
 # Discussion
 
