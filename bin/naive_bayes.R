@@ -1,4 +1,5 @@
 require(cvTools)
+source(file = "splitdf.R")
 
 #' Calculate Parameters for Naive Bayes
 #'
@@ -111,6 +112,16 @@ cv_bayes <- function(data, res, kfold = 5) {
     mean(results)
 }
 
-main <- function(data, response) {
-    1
+run_naive_bayes <- function(data, response) {
+    splits <- splitdf(dataframe = data, trainSplit = 0.75, seed = 1111)
+    training <- splits$trainset
+    trainDat <- training[, !names(training) == response]
+    trainRes <- training[, response]
+    test <- splits$testset
+    testDat <- test[, !names(test) == response]
+    testRes <- test[, response]
+    predResults <- cv_bayes(data = trainDat, res = trainRes, kfold = 10)
+    trainParams <- naive_train(input = trainDat, res = trainRes)
+    testResults <- naive_test(test = testDat, res = testRes, trainParams)
+    list(prediction=predResults, test=testResults)
 }
