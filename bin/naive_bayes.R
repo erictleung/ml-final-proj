@@ -63,16 +63,17 @@ naive_test <- function(test, res, params) {
             tempProbs <- mapply(dnorm, test[i, ], tempMean, tempStd)
             classProbs[j, ] <- prod(tempProbs)
         }
-        total <- sum(classProbs)
-        classProbs <- classProbs / total
+        total <- sum(classProbs)  # get normalizing total
+        classProbs <- classProbs / total  # normalize over total
         chooseParams <- names(params)
-        maxVal <- max(classProbs)
+        maxVal <- max(classProbs)  # find out which class value won
 
-        results[i, 1] <- res[i]
-        results[i, 2] <- chooseParams[which(classProbs %in% maxVal)]
-        results[i, 3] <- results[i, 1] == results[i, 2]
+        results[i, 1] <- as.character(res[i])  # save actual class
+        results[i, 2] <- chooseParams[which(classProbs %in% maxVal)]  # winner
+        results[i, 3] <- results[i, 1] == results[i, 2]  # correct or not
     }
-    results
+    error <- 1 - mean(results$results[, 3])  # find error of prediction
+    list(results=results, error=error)
 }
 
 #' Perform Cross-Validation Naive Bayes
