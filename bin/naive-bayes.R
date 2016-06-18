@@ -35,10 +35,13 @@ calc_params <- function(train, res) {
 #' naive_train(train, res)
 naive_train <- function(input, res) {
     cat("Training Naive Bayes classifer...\n")
+    resTemp <- as.data.frame(res)
     paramsList <- list()
-    for (i in unique(res)) {
-        subdata <- input[res == i, ]  # grab particular class in data
-        paramsList[[i]] <- calc_params(subdata, i)
+    uniqueClasses <- unique(resTemp)
+    for (i in 1:nrow(uniqueClasses)) {
+        chooseClass <- uniqueClasses[i, ]
+        subdata <- input[chooseClass == res, ]  # grab particular class in data
+        paramsList[[chooseClass]] <- calc_params(subdata, uniqueClasses[i, ])
     }
     cat("Finished training Naive Bayes classifer.\n")
     paramsList
