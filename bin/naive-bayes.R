@@ -136,8 +136,10 @@ run_naive_bayes <- function(data, response) {
     test <- splits$testset
     testDat <- test[, !names(test) == response]
     testRes <- test[, response]
+
     predResults <- cv_bayes(data = trainDat, res = trainRes, kfold = 10)
     trainParams <- naive_train(input = trainDat, res = trainRes)
     testResults <- naive_test(test = testDat, res = testRes, trainParams)
-    list(prediction=predResults, test=testResults)
+
+    list(prediction = predResults, test = testResults)
 }
