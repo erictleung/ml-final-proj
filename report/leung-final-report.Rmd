@@ -25,6 +25,11 @@ figure7 <- paste("Distribution of the natural log transformation of chloride",
                "values for all wine data")
 ```
 
+```{r Source Extenal Code}
+source("../bin/splitdf.R")
+source("../bin/naive-bayes.R")
+source("../bin/decision-trees.R")
+```
 
 ```{r Load Packages}
 # Load packages
@@ -202,8 +207,6 @@ white wines that a learning algorithm will be able to differentiate between the
 two.
 
 ```{r}
-source("../bin/splitdf.R")
-source("../bin/naive_bayes.R")
 ```
 
 
