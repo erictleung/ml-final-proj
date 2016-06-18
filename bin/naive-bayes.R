@@ -102,15 +102,17 @@ naive_test <- function(test, res, params) {
 #' res <- iris[, "Species"]
 #' cvErr <- cv_bayes(train, res, kfold = 10)
 cv_bayes <- function(data, res, kfold = 5) {
+    cat("Performing cross-validation of Naive Bayes classifier...\n")
     if (kfold > nrow(data)) kfold <- nrow(data)  # at most do leave-one-out
     folds <- cvFolds(nrow(data), K = kfold, type = "random")
     groups <- folds$which  # save group numbers for later use
     results <- c()  # save cross-validation here
-    for (i in 1:unique(groups)) {
-        tempTrain <- data[groups == i, ]
-        tempTrainRes <- res[groups == i, ]
-        tempCv <- data[groups != i, ]
-        tempCvRes <- res[groups != i, ]
+    for (i in unique(groups)) {
+        cat("Start fold", i, "\n")
+        tempTrain <- data[groups != i, ]
+        tempTrainRes <- res[groups != i, ]
+        tempCv <- data[groups == i, ]
+        tempCvRes <- res[groups == i, ]
 
         tempParams <- naive_train(input = tempTrain, res = tempTrainRes)
         tempResults <- naive_test(test = tempCv,
