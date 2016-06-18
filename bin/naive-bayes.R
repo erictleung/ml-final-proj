@@ -77,11 +77,11 @@ naive_test <- function(test, res, params) {
         chooseParams <- names(params)
         maxVal <- max(classProbs)  # find out which class value won
 
-        results[i, 1] <- as.character(res[i])  # save actual class
+        results[i, 1] <- as.character(res[i, ])  # save actual class
         results[i, 2] <- chooseParams[which(classProbs %in% maxVal)]  # winner
         results[i, 3] <- results[i, 1] == results[i, 2]  # correct or not
     }
-    error <- 1 - mean(results$results[, 3])  # find error of prediction
+    error <- 1 - mean(results[, 3])  # find error of prediction
     cat("Finished testing Naive Bayes classifier.\n")
     list(results = results, error = error)
 }
