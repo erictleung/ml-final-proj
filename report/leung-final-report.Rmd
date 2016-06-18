@@ -206,7 +206,27 @@ I hypothesize that there are enough physicochemical differences between red and
 white wines that a learning algorithm will be able to differentiate between the
 two.
 
+```{r Predict Red and White Wine}
+# Decision tree analysis
+dtResults <- run_decision_tree_type(wines, "type", "class")
+
+# Naive Bayes analysis
+nbResults <- run_naive_bayes(wines, "type")
+
+# SVM analysis
+svmResults <- run_svm_type(wines, "type")
+```
+
 ```{r}
+
+```
+
+
+## Predict Wine Quality
+
+```{r Predict Wine Quality}
+dtQuality <- run_decision_tree_type(wines, "quality", "class")
+svmQuality <- run_svm_type(wines, "quality")
 ```
 
 
