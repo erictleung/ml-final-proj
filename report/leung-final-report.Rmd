@@ -118,12 +118,12 @@ These variables will be used in the machine learning analysis.
 ### Correlations
 
 ```{r red, fig.cap=figure1}
-redCorr <- red %>% select(-type) %>% cor
+redCorr <- redType %>% select(-type) %>% cor
 redCorr %>% corrplot(type = "lower")
 ```
 
 ```{r fig.cap=figure2}
-whiteCorr <- white %>% select(-type) %>% cor
+whiteCorr <- whiteType %>% select(-type) %>% cor
 whiteCorr %>% corrplot(type = "lower")
 ```
 
