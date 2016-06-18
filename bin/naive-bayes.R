@@ -14,9 +14,11 @@ if (!exists("splitdf", mode = "function")) source("splitdf.R")
 #' res <- setosa[, "Species"]
 #' params <- calc_params(train, res)
 calc_params <- function(train, res) {
+    cat("Calculating parameters...\n")
     means <- colMeans(train)
     std <- apply(X = train, MARGIN = 2, FUN = sd)
 
+    cat("Finished calculating parameters.\n")
     list(means = means, std = std)
 }
 
@@ -32,11 +34,13 @@ calc_params <- function(train, res) {
 #' res <- iris[, "Species"]
 #' naive_train(train, res)
 naive_train <- function(input, res) {
+    cat("Training Naive Bayes classifer...\n")
     paramsList <- list()
     for (i in unique(res)) {
         subdata <- input[res == i, ]  # grab particular class in data
         paramsList[[i]] <- calc_params(subdata, i)
     }
+    cat("Finished training Naive Bayes classifer.\n")
     paramsList
 }
 
@@ -54,6 +58,7 @@ naive_train <- function(input, res) {
 #' paramsList <- naive_train(train, res)
 #' prediction <- naive_test(train, res, paramsList)
 naive_test <- function(test, res, params) {
+    cat("Testing Naive Bayes classifier...\n")
     results <- matrix(0, nrow = nrow(test), ncol = 3)  # actual, pred, yes/no
     results <- data.frame(results)
     for (i in 1:nrow(test)) {
@@ -74,6 +79,7 @@ naive_test <- function(test, res, params) {
         results[i, 3] <- results[i, 1] == results[i, 2]  # correct or not
     }
     error <- 1 - mean(results$results[, 3])  # find error of prediction
+    cat("Finished testing Naive Bayes classifier.\n")
     list(results = results, error = error)
 }
 
@@ -108,11 +114,16 @@ cv_bayes <- function(data, res, kfold = 5) {
                               res = tempCvRes,
                               params = tempParams)
         results <- c(results, tempResults$error)
+        cat("\n")
     }
+    cat("Finished cross-validation of Naive Bayes classifier.\n")
     mean(results)
 }
 
 run_naive_bayes <- function(data, response) {
+    cat("Starting Naive Bayes classifier analysis...\n")
+
+    # Split data into training and test datasets
     splits <- splitdf(dataframe = data, trainSplit = 0.75, seed = 1111)
     training <- splits$trainset
     trainDat <- training[, !names(training) == response]
