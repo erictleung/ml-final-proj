@@ -129,12 +129,12 @@ redCorr <- redType %>% select(-type) %>% cor
 redCorr %>% corrplot(type = "lower")
 ```
 
-```{r fig.cap=figure2}
+```{r white, fig.cap=figure2}
 whiteCorr <- whiteType %>% select(-type) %>% cor
 whiteCorr %>% corrplot(type = "lower")
 ```
 
-```{r fig.cap=figure3}
+```{r wines, fig.cap=figure3}
 winesCorr <- wines %>% select(-type) %>% cor
 winesCorr %>% corrplot(type = "lower")
 ```
@@ -228,7 +228,7 @@ wines <- wines %>%
 
 # Methods
 
-## Linear Regression
+## Linear and Logistic Regression
 
 ## Decision Trees
 
