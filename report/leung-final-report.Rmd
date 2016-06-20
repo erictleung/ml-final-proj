@@ -22,6 +22,8 @@ knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE)
 figure1 <- "Heatmap of variable correlations for the red wine data"
 figure2 <- "Heatmap of variable correlations for the white wine data"
 figure3 <- "Heatmap of variable correlations for all wine data"
+compareFixed <- "Density distributions of fixed acidity in white and red wine"
+compareChloride <- "Desntiy distributions of chlorides in white and red wine"
 figure4 <- "Distribution of pH values for all wine data"
 figure5 <- "Distribution of citric acid values for all wine data"
 figure6 <- "Distribution of raw chloride values for all wine data"
@@ -141,7 +143,36 @@ Figures 1, 2, and 3 show heatmaps generated from correlation matrices from just
 white wine data, just red wine data, and the combination of both wines into one.
 
 
-## Normality and Skew
+### Comparisons Between White and Red
+
+In this report, I will be differentiating between red and white wine types.
+Firstly, I will need to combine the two separate wine datasets. Here I will
+explore potential issues in combining the data.
+
+When combining the data, I will explore the distribution of each of the wine
+attributes for both wines are similar. This compatability between data sets will
+lessen any bias or inherent structure in the data. Any underlying structure in
+the combined data may give a machine learning algorithm information on
+predicting wine type not found in the attributes.
+
+```{r Compare Red/White Fixed Acidity, fig.cap=compareFixed}
+wines %>% ggplot(aes(fixed.acidity, color = type)) + geom_density() +
+    xlab("Chlorides") + ylab("Density") +
+    guides(color = guide_legend("Type")) + theme_minimal()
+```
+
+Figure 4 shows one example of the shared distribution of chlorides, separated by
+wine type. Here we see that both types of wine share a similar distribution
+shape. This suggests that this attribute will not be too helpful in
+differentiating between the wine types.
+
+```{r Compare Red/White Cloride, fig.cap=compareChloride}
+wines %>% ggplot(aes(chlorides, color = type)) + geom_density() +
+    xlab("Chlorides") + ylab("Density") +
+    guides(color = guide_legend("Type")) + theme_minimal()
+```
+
+### Normality and Skew
 
 I will now take a look at the data to see and note any unusual samples or
 attributes. All of our attributes are numerical, except for the wine type. For
