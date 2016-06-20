@@ -244,7 +244,7 @@ I hypothesize that there are enough physicochemical differences between red and
 white wines that a learning algorithm will be able to differentiate between the
 two.
 
-```{r Predict Red and White Wine}
+```{r Predict Red and White Wine, echo=FALSE, results='hide'}
 # Decision tree analysis
 dtResults <- run_decision_tree_type(wines, "type", "class")
 
