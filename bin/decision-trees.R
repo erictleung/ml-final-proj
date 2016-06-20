@@ -10,7 +10,7 @@ if (!exists("splitdf", mode = "function")) source("splitdf.R")
 #' @return
 #'
 #' @examples
-find_winner <- function(pred, data, response) {
+find_dt_winner <- function(pred, data, response) {
     classes <- colnames(pred)
     if (length(classes) > 2) {
         winner <- apply(pred, 1,
@@ -55,8 +55,8 @@ run_decision_tree_type <- function(data, response, method) {
     testPred <- data.frame(predict(fit, test))
 
     # Find winner of prediction
-    trainPred <- find_winner(trainPred, training, response)
-    testPred <- find_winner(testPred, test, response)
+    trainPred <- find_dt_winner(trainPred, training, response)
+    testPred <- find_dt_winner(testPred, test, response)
 
     # Find training and test errors
     trainErr <- 1 - mean(trainPred$result)
