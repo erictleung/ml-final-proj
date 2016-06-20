@@ -7,7 +7,7 @@ if (!exists("splitdf", mode = "function")) source("splitdf.R")
 #' @param data
 #' @param response
 #'
-#' @return
+#' @return prediction data frame with prediction probabilities
 #'
 #' @examples
 find_dt_winner <- function(pred, data, response) {
