@@ -5,6 +5,9 @@ date: 2016 June 17th
 output: 
   pdf_document: 
     fig_caption: yes
+    fig_crop: no
+    fig_height: 4
+    fig_width: 5
     toc: yes
 bibliography: refs.bib
 classoption: twocolumn
