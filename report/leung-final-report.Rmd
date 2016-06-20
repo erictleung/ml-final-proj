@@ -33,6 +33,7 @@ figure7 <- paste("Distribution of the natural log transformation of chloride",
 source("../bin/splitdf.R")
 source("../bin/naive-bayes.R")
 source("../bin/decision-trees.R")
+source("../bin/svm.R")
 ```
 
 ```{r Load Packages}
