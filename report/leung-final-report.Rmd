@@ -264,7 +264,9 @@ svmResults <- run_svm_type(wines, "type")
 
 ```{r Predict Wine Quality}
 dtQuality <- run_decision_tree_type(wines, "quality", "class")
-svmQuality <- run_svm_type(wines, "quality")
+svmQualityLinear <- run_svm_type(wines, "quality", kernel = "linear")
+svmQualityRadial <- run_svm_type(wines, "quality", kernel = "radial")
+svmQualityPoly <- run_svm_type(wines, "quality", kernel = "polynomial")
 ```
 
 
