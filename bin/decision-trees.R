@@ -24,7 +24,8 @@ find_dt_winner <- function(pred, data, response) {
         winner <- apply(pred, 1,
                         function(x) which(x == max(x, na.rm = TRUE)))
         pred <- cbind(pred, prediction = classes[winner])
-        pred <- cbind(pred, original = as.character(data[, response]))
+        pred <- cbind(pred, original = data.frame(data[, response]))
+        colnames(pred) <- c(classes, "prediction", "original")
     }
     pred <- cbind(pred, result = pred[, "prediction"] == pred[, "original"])
     pred
