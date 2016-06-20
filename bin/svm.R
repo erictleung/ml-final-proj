@@ -17,7 +17,7 @@ find_svm_winner <- function(pred, data, response) {
     pred
 }
 
-run_svm_type <- function(data, response) {
+run_svm_type <- function(data, response, kernel = "linear") {
     data <- as.data.frame(data)
     data[, response] <- as.factor(data[, response])
 
@@ -30,7 +30,7 @@ run_svm_type <- function(data, response) {
     form <- as.formula(paste(response, ".", sep = " ~ "))
 
     # Run decision tree
-    fit <- svm(form, data = training, kernel = "linear")
+    fit <- svm(form, data = training, kernel = kernel)
 
     # Format results
     trainPred <- data.frame(predict(fit, training))
