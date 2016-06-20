@@ -20,6 +20,8 @@ find_dt_winner <- function(pred, data, response) {
             paste("X", x, sep = "")
         })
         pred <- cbind(pred, original)
+        pred[["prediction"]] <- as.character(pred[["prediction"]])
+        pred[["original"]] <- as.character(pred[["original"]])
     } else {
         winner <- apply(pred, 1,
                         function(x) which(x == max(x, na.rm = TRUE)))
