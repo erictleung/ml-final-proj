@@ -30,19 +30,6 @@ find_winner <- function(pred, data, response) {
     pred
 }
 
-find_winner_other <- function(pred, data, response) {
-    classes <- colnames(pred)
-    winner <- apply(pred, 1, function(x) which(x == max(x, na.rm = TRUE)))
-    pred <- cbind(pred, prediction = classes[winner])
-    original <- apply(data[, response], 1, function(x) {
-        paste("X", x, sep = "")
-    })
-    pred <- cbind(pred, original)
-    pred <- cbind(pred,
-                  result = pred[, "prediction"] == pred[, "original"])
-    pred
-}
-
 #' Perform Decision Tree Analysis
 #'
 #' @param data
