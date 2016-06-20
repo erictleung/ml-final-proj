@@ -179,16 +179,17 @@ attributes. All of our attributes are numerical, except for the wine type. For
 simplicity, we will assume and transform our data to as close to a normal
 distribution as possible.
 
-```{r fig.cap=figure4}
-wines %>% ggplot(aes(pH)) + geom_histogram() + ylab("Count")
+```{r Wines pH, fig.cap=figure4}
+wines %>% ggplot(aes(pH)) + geom_histogram() + ylab("Count") + theme_minimal()
 ```
 
 The variables pH and quality appear to be normal enough. Shown in Figure 4
 is the distribution of pH values. The distribution appears good enough to be
 normal. The values for quality follow a similar distribution.
 
-```{r fig.cap=figure5}
-wines %>% ggplot(aes(citric.acid)) + geom_histogram() + ylab("Count")
+```{r Wines Citric Acid, fig.cap=figure5}
+wines %>% ggplot(aes(citric.acid)) + geom_histogram() +
+    ylab("Count") + theme_minimal()
 ```
 
 There are six attributes which have outliers. These attributes are citric acid
@@ -199,13 +200,14 @@ distribution and extreme values to the right. The other three attribute with
 outliers have similar shapes. Despite having outliers, the overall distribution
 of these attributes follows a normal distribution.
 
-```{r fig.cap=figure6}
-wines %>% ggplot(aes(chlorides)) + geom_histogram() + ylab("Count")
+```{r Wines Chlorides, fig.cap=figure6}
+wines %>% ggplot(aes(chlorides)) + geom_histogram() +
+    ylab("Count") + theme_minimal()
 ```
 
-```{r fig.cap=figure7}
+```{r Wines log(Chlorides), fig.cap=figure7}
 wines %>% ggplot(aes(chlorides %>% log)) + geom_histogram() +
-    xlab("Chloride Content") + ylab("Count")
+    xlab("Chloride Content") + ylab("Count") + theme_minimal()
 ```
 
 Lastly, there are four attributes which have enough skew in their distribution 
