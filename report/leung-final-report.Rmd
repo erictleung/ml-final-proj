@@ -9,6 +9,7 @@ output:
     fig_height: 4
     fig_width: 5
     toc: yes
+fontsize: 12pt
 bibliography: refs.bib
 classoption: twocolumn
 ---
