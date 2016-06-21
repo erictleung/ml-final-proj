@@ -72,8 +72,6 @@ porta purus.
 
 # Introduction
 
-# Wine Dataset
-
 ```{r Format Data}
 redType <- red %>% mutate(type = "red")
 whiteType <- white %>% mutate(type = "white")
