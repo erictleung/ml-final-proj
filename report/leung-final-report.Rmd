@@ -139,17 +139,33 @@ Before I go straight into implementing various machine learning algorithms,
 I will take a look at the data. This will ensure there isn't anything too
 anomalous. This can also affect how my results are interpreted.
 
+
 ## Correlations
+
+One thing I'd like to look at are correlations between the attributes in the
+data. Correlations between attributes can show redundant information and other
+potential structural information about the data set.
 
 ```{r red, fig.cap=figure1}
 redCorr <- redType %>% select(-type) %>% cor
 redCorr %>% corrplot(type = "lower")
 ```
 
+Figure `r which(figList == "figure1")` shows a heatmap of variable
+correlations for the red wine data. There are noteworthy correlations between:
+fixed acidity and citric acid; density and fixed acidity; and pH and fixed
+acidity. Overall, not very many strong correlations.
+
 ```{r white, fig.cap=figure2}
 whiteCorr <- whiteType %>% select(-type) %>% cor
 whiteCorr %>% corrplot(type = "lower")
 ```
+
+Figure `r which(figList == "figure2")` shows a heatmap of variable correlations
+for the white wine data. There are noteworthy correlations between density and
+alcohol aswell as residual sugar and density. As with Figure
+`r which(figList == "figure1")`, there don't appear to be too many strongly
+correlated attributes to worry.
 
 ```{r wines, fig.cap=figure3}
 winesCorr <- wines %>% select(-type) %>% cor
