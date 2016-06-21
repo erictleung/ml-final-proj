@@ -102,19 +102,19 @@ I used the Wine Quality Data Set. This data comes from Dr. Paulo Cortez and
 their pursuit to predict wine quality preferences [@cortez2009modeling]. The
 data was downloaded from the UCI Machine Learning Repository [@lichman2013uci].
 
-The data analyzed included two datasets, one related to red *vinho verde* and
-the other related to white *vinho verde*. Each of the two datasets contain
+The data analyzed included two data sets, one related to red *vinho verde* and
+the other related to white *vinho verde*. Each of the two data sets contain
 twelve variables, one of which was the participant's quality score for that wine
-[@lichman2013uci]. This analysis will use both datasets, either in one dataset
-or two separate datasets and focusing on one type of wine.
+[@lichman2013uci]. This analysis will use both data sets, either in one data set
+or two separate data sets and focusing on one type of wine.
 
 
 ## Wine Characteristics
 
-The red wine dataset has `r nrow(red)` samples while the white wine dataset has
-`r nrow(white)` samples. It was not clear from the reference paper on how they
-collected the data besides being tested "at the official certification entity
-(CVRVV)" [@cortez2009modeling].
+The red wine data set has `r nrow(red)` samples while the white wine data set
+has `r nrow(white)` samples. It was not clear from the reference paper on how
+they collected the data besides being tested "at the official certification
+entity (CVRVV)" [@cortez2009modeling].
 
 The available physicochemical variables are:
 
@@ -165,18 +165,18 @@ both wines into one.
 ## Comparisons Between White and Red
 
 In this report, I will be differentiating between red and white wine types.
-Firstly, I will need to combine the two separate wine datasets. Here I will
+Firstly, I will need to combine the two separate wine data sets. Here I will
 explore potential issues in combining the data.
 
 When combining the data, I will explore the distribution of each of the wine
-attributes for both wines are similar. This compatability between data sets will
+attributes for both wines are similar. This compatibility between data sets will
 lessen any bias or inherent structure in the data. Any underlying structure in
 the combined data may give a machine learning algorithm information on
 predicting wine type not found in the attributes.
 
 ```{r Compare Red/White Fixed Acidity, fig.cap=compareFixed}
 wines %>% ggplot(aes(fixed.acidity, color = type)) + geom_density() +
-    xlab("Chlorides") + ylab("Density") +
+    xlab("Fixed Acidity") + ylab("Density") +
     guides(color = guide_legend("Type")) + theme_minimal()
 ```
 
@@ -245,7 +245,7 @@ wines %>% ggplot(aes(chlorides %>% log)) + geom_histogram() +
 ```
 
 Lastly, there are four attributes which have enough skew in their distribution 
-which warrent a transformation. These attributes are fixed acidity, volatile 
+which warrant a transformation. These attributes are fixed acidity, volatile 
 acidity, residual sugar content, and chlorides. Figure 6 shows the raw values 
 for chloride. The distribution of chloride values is highly skews and will be 
 logarithm transformed to take a more normal distribution. The result of a
