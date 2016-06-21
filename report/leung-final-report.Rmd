@@ -42,6 +42,8 @@ figure5 <- "Distribution of citric acid values for all wine data"
 figure6 <- "Distribution of raw chloride values for all wine data"
 figure7 <- paste("Distribution of the natural log transformation of chloride",
                  "values for all wine data")
+figList <- c("figure1", "figure2", "figure3", "compareFixed", "compareChloride",
+             "figure4", "figure5", "figure6", "figure7")
 ```
 
 ```{r Source Extenal Code}
@@ -150,8 +152,10 @@ winesCorr <- wines %>% select(-type) %>% cor
 winesCorr %>% corrplot(type = "lower")
 ```
 
-Figures 1, 2, and 3 show heatmaps generated from correlation matrices from just
-white wine data, just red wine data, and the combination of both wines into one.
+Figures `r which(figList == "figure1")`, `r which(figList == "figure2")`, and
+`r which(figList == "figure3")` show heat maps generated from correlation
+matrices from just white wine data, just red wine data, and the combination of
+both wines into one.
 
 
 ### Comparisons Between White and Red
@@ -172,10 +176,13 @@ wines %>% ggplot(aes(fixed.acidity, color = type)) + geom_density() +
     guides(color = guide_legend("Type")) + theme_minimal()
 ```
 
-Figure 4 shows one example of the shared distribution of chlorides, separated by
-wine type. Here we see that both types of wine share a similar distribution
-shape. This suggests that this attribute will not be too helpful in
-differentiating between the wine types.
+There are attributes where the distributions of values are similar. Figure
+`r which(figList == "compareFixed")` shows one example this. The figure shows
+distributions of chlorides, separated by wine type. Here we see that both types
+of wine share a similar distribution shape. This suggests that this attribute
+will not be too helpful in differentiating between the wine types. There are
+number of attributes with this pattern: fixed acidity, citric acid, residual
+sugar, density, alcohol, quality.
 
 ```{r Compare Red/White Cloride, fig.cap=compareChloride}
 wines %>% ggplot(aes(chlorides, color = type)) + geom_density() +
@@ -183,7 +190,19 @@ wines %>% ggplot(aes(chlorides, color = type)) + geom_density() +
     guides(color = guide_legend("Type")) + theme_minimal()
 ```
 
-### Normality and Skew
+However, there are attributes where the distributions are different. An example
+of this is shown in Figure `r which(figList == "compareChloride")`. This shows
+that we can generally split wine types based on chloride content and this
+observation could be exploited. There are number of attributes that have this
+pattern: chlorides, volatile acidity, free sulfur dioxide (to a lesser extent),
+total sulfur dioxide, pH (to a lesser extent), sulphates (to a lesser extent)
+
+These observations in Figure `r which(figList == "compareFixed")` and Figure
+`r which(figList == "compareChloride")` suggest that a learning algorithm will
+not have too hard of a time to distinguish between wine type.
+
+
+## Normality and Skew
 
 I will now take a look at the data to see and note any unusual samples or
 attributes. All of our attributes are numerical, except for the wine type. For
