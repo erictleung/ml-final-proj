@@ -278,8 +278,6 @@ wines <- wines %>%
 
 # Methods
 
-## Linear and Logistic Regression
-
 ## Decision Trees
 
 ## Support Vector Machine
