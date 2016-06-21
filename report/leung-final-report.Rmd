@@ -96,7 +96,7 @@ wines <- wines[randomizeRows, ]
 ```
 
 
-## Description
+## Wine Dataset Description
 
 I used the Wine Quality Data Set. This data comes from Dr. Paulo Cortez and
 their pursuit to predict wine quality preferences [@cortez2009modeling]. The
@@ -133,9 +133,13 @@ The available physicochemical variables are:
 These variables will be used in the machine learning analysis.
 
 
-## Exploratory Data Analysis
+# Exploratory Data Analysis
 
-### Correlations
+Before I go straight into implementing various machine learning algorithms,
+I will take a look at the data. This will ensure there isn't anything too
+anomalous. This can also affect how my results are interpreted.
+
+## Correlations
 
 ```{r red, fig.cap=figure1}
 redCorr <- redType %>% select(-type) %>% cor
@@ -158,7 +162,7 @@ matrices from just white wine data, just red wine data, and the combination of
 both wines into one.
 
 
-### Comparisons Between White and Red
+## Comparisons Between White and Red
 
 In this report, I will be differentiating between red and white wine types.
 Firstly, I will need to combine the two separate wine datasets. Here I will
