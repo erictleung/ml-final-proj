@@ -19,16 +19,29 @@ knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE)
 ```
 
 ```{r Figure Titles}
-figure1 <- "Heatmap of variable correlations for the red wine data"
-figure2 <- "Heatmap of variable correlations for the white wine data"
-figure3 <- "Heatmap of variable correlations for all wine data"
-compareFixed <- "Density distributions of fixed acidity in white and red wine"
-compareChloride <- "Desntiy distributions of chlorides in white and red wine"
+figure1 <- paste("Heatmap of variable correlations for the red wine data.",
+                 "There are noteworthy correlations between: fixed acidity",
+                 "and citric acid; density and fixed acidity; and pH and",
+                 "fixed acidity.",
+                 "Overall, not very many strong correlations.")
+figure2 <- paste("Heatmap of variable correlations for the white wine data",
+                 "There are noteworthy correlations between density and",
+                 "alcohol as well as residual sugar and density.")
+figure3 <- paste("Heatmap of variable correlations for all wine data",
+                 "After combining the two data sets, the correlation matrix",
+                 "is less sparse and there appears to be strong correlations.",
+                 "These correlations should be kept in mind while continuing",
+                 "with the analysis.")
+compareFixed <- paste("Density distributions of fixed acidity in white and red",
+                      "wine. Here we see a strong overlap between the two",
+                      "wines. This suggests that using fixed acidity to",
+                      "differentiate between wines will be difficult.")
+compareChloride <- "Density distributions of chlorides in white and red wine"
 figure4 <- "Distribution of pH values for all wine data"
 figure5 <- "Distribution of citric acid values for all wine data"
 figure6 <- "Distribution of raw chloride values for all wine data"
 figure7 <- paste("Distribution of the natural log transformation of chloride",
-               "values for all wine data")
+                 "values for all wine data")
 ```
 
 ```{r Source Extenal Code}
