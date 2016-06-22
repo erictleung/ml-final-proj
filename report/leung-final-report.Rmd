@@ -322,7 +322,28 @@ nbResults <- run_naive_bayes(wines, "type")
 svmResults <- run_svm_type(wines, "type")
 ```
 
-```{r}
+A summary of the results can be found in Table 1. As you can see, the linear
+support vector machine performs the best out of the three methods I used.
+
+\begin{table}[]
+\centering
+\begin{tabular}{l|l|l}
+Method         & Training Error & Test Error \\ \hline
+Decision Trees & 1.867\%        & 1.723\%    \\
+Naive Bayes    & 1.560\%        & 1.538\%    \\
+SVM (Linear)   & 0.678\%        & 0.923\%    \\
+\end{tabular}
+\caption{Summary of machine learning methods on predicting wine type}
+\end{table}
+
+From this quick look there are few conclusions we can make. Each of the methods
+have greater than 98% accuracy in differing between wine types. Decision trees
+have a more powerful ensemble counterpart for more complicate problems. However,
+that might not be necessary here.
+
+Same goes for the support vector machine. Here I just used the linear kernel
+without resorting to any more complex kernels.
+
 
 ```
 
