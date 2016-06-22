@@ -1,13 +1,16 @@
 # CS559/659 Machine Learning Final Project
 
 Here is my machine learning project on using various methods to predict wine
-quality based on physiochemical measurements.
+quality and wine type based on physiochemical measurements.
 
 
 ## Prerequisites
 
-- `cURL`
-- `make`
+- cURL
+- make
+- [R][r] (>= 3.2.3)
+
+[r]: https://www.r-project.org/
 
 
 ## Run Analysis
