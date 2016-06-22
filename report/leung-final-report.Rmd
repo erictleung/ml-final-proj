@@ -163,7 +163,7 @@ whiteCorr %>% corrplot(type = "lower")
 
 Figure `r which(figList == "figure2")` shows a heatmap of variable correlations
 for the white wine data. There are noteworthy correlations between density and
-alcohol aswell as residual sugar and density. As with Figure
+alcohol as well as residual sugar and density. As with Figure
 `r which(figList == "figure1")`, there don't appear to be too many strongly
 correlated attributes to worry.
 
@@ -281,20 +281,20 @@ wines <- wines %>%
 ## Decision Trees
 
 A decision tree, in the machine learning sense, is a method that partitions
-your data into "purer" groups. Your data is initially a group of heterogenous
+your data into "purer" groups. Your data is initially a group of heterogeneous
 groups based on their response variable. Each partition of the sample space is
 supposed to increase the "purity" of that partition so that if you were to
 randomly select a sample, you would have a greater chance for one of the
 response categories than the others.
 
 Here I use the `rpart` package is run my decision tree analysis. According to
-the authors, their package is a reimplementation of Brienman, Friedman, Olshen,
+the authors, their package is a re-implementation of Brienman, Friedman, Olshen,
 and Stone's classification and regression trees
 [@rpart, @breiman1984classification].
 
 There are two general steps in decision trees: growing the tree and pruning the
 tree. Growing the tree is essentially training the method, where you start
-partitioning the data. The pruning step is to prevent overfitting. Pruning is
+partitioning the data. The pruning step is to prevent over-fitting. Pruning is
 where you remove sections of your grown tree because those splits give little
 useful information.
 
@@ -316,7 +316,7 @@ $\overrightarrow{x}$ is a set of points.
 
 Hyperplanes can be linear, as mentioned above, or they can have a non-linear
 spin to it. Non-linear hyperplanes can be achieved by using different kernels.
-Some common kernels are polynomial, gaussian radial basis, and hyperbolic
+Some common kernels are polynomial, Gaussian radial basis, and hyperbolic
 tangent.
 
 In my analysis, I will implement an SVM using the `e1071` R package [@e1071].
