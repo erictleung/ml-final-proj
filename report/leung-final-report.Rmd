@@ -342,6 +342,11 @@ now need is to calculate the means and standard deviations for input parameters.
 For my case with two wine types to classify, I would take each type of wine and
 calculate for each attribute the mean and standard deviation.
 
+Once you have these parameters, mean and standard deviation, you can use them in
+the probability density definition of the normal distribution
+
+$$f(x|\mu, \sigma^2) = \frac{1}{\sqrt{2\sigma^2\pi}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}$$
+
 # Results
 
 ## Predict Red and White Wine
