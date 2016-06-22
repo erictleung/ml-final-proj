@@ -215,7 +215,7 @@ of this is shown in Figure `r which(figList == "compareChloride")`. This shows
 that we can generally split wine types based on chloride content and this
 observation could be exploited. There are number of attributes that have this
 pattern: chlorides, volatile acidity, free sulfur dioxide (to a lesser extent),
-total sulfur dioxide, pH (to a lesser extent), sulphates (to a lesser extent)
+total sulfur dioxide, pH (to a lesser extent), sulphates (to a lesser extent).
 
 These observations in Figure `r which(figList == "compareFixed")` and Figure
 `r which(figList == "compareChloride")` suggest that a learning algorithm will
