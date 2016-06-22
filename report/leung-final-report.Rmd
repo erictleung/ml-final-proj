@@ -412,6 +412,13 @@ are density and residual sugar content.
 
 ## Predict Wine Quality
 
+Another question I wanted to ask was whether you could predict wine quality.
+Here I only used decision trees and support vector machines. However, with the
+support vector machines, I varied the kernel, ranging from the linear kernel I
+used before, a radial basis kernel, and a polynomial kernel. The varying kernel
+changes the boundary line and space in which the data is looked at. This allows
+the support vector machine to deal with more complex data.
+
 ```{r Predict Wine Quality}
 dtQuality <- run_decision_tree_type(wines, "quality", "class")
 svmQualityLinear <- run_svm_type(wines, "quality", kernel = "linear")
