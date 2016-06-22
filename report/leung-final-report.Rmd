@@ -426,7 +426,43 @@ svmQualityRadial <- run_svm_type(wines, "quality", kernel = "radial")
 svmQualityPoly <- run_svm_type(wines, "quality", kernel = "polynomial")
 ```
 
+A summary of the results can be found in Table 2. The radial kernel SVM
+performed the best on both the training and test set.
 
-# Discussion
+\begin{table}[]
+\centering
+\begin{tabular}{l|l|l}
+Method         & Training Error & Test Error \\ \hline
+Decision Trees & 46.367\%       & 46.031\%   \\
+SVM (Linear)   & 46.367\%       & 46.708\%   \\
+SVM (Radial)   & 38.875\%       & 42.769\%   \\
+SVM (Poly)     & 39.984\%       & 43.692\%  
+\end{tabular}
+\caption{Summary of machine learning methods on predicting wine quality}
+\end{table}
+
+# Discussion and Conclusion
+
+Wine value is determined by physicochemical properties and personal taste.
+Physicochemical properties are determined and measured. Personal taste is a bit
+more variable. Machine learning algorithms are now used to try and help predict
+personal taste preferences.
+
+Here I have tried to predict personal taste and wine type. Wine type is a binary
+variable. Meanwhile, quality had a range between between 1 and 10. Here, I
+performed classification on both wine type and wine quality.
+
+The authors of the paper who generate the data made use of more regression
+methods in prediction. Their rationale was that regression preserves the order
+and semantic difference between a wine rated at four versus one at a nine.
+
+For binary cases, it appears that decision trees, naive Bayes, and SVMs all
+perform well. However, the multi-classification problem of predicting perceived
+quality was much more difficult. 
+
+Future work on this would be to try out more regression methods on wine quality.
+Along with regressions, it may be worthwhile to explore interactions between
+the physicochemical properties. For the current SVMs, some parameters to tune
+are the cost for violating the margin boundary, tolerance, and shrinking.
 
 # References
