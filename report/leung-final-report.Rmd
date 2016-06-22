@@ -391,10 +391,23 @@ without resorting to any more complex kernels.
 
 ### Decision Tree Classsification of Wine
 
-```{r Decision Tree Plot, fig.cap=dtPlot}
+For the decision tree, we can zoom in a little bit on what its learned.
+
+```{r Decision Tree Plot, eval=FALSE}
+png('dt-results.png')
 dtResults$fitted %>% plot(uniform = TRUE)
-text(dtResults$fitted, all = TRUE, cex = 0.8)
+text(dtResults$fitted, all = TRUE, cex = 1.0)
+dev.off()
 ```
+
+![Decision tree results plot](dt-results.png)
+
+In figure `r which(figList == "dtPlot")`, we can see the decision analysis the
+decision tree made while learning the data. We can see that the first slice of
+the data was with total sulfur dioxide and then chloride content was next. In
+total, it appears the decision tree only made use of four attributes from the
+data, including total sulfur dioxide and chlorides. The remaining two attributes
+are density and residual sugar content.
 
 
 ## Predict Wine Quality
