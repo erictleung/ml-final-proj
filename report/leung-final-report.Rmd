@@ -345,6 +345,11 @@ Same goes for the support vector machine. Here I just used the linear kernel
 without resorting to any more complex kernels.
 
 
+### Decision Tree Classsification of Wine
+
+```{r Decision Tree Plot}
+dtResults$fitted %>% plot(uniform = TRUE, main = "Decision Tree for Wine")
+text(dtResults$fitted, all = TRUE, cex = 0.5)
 ```
 
 
