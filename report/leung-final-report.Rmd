@@ -395,7 +395,7 @@ without resorting to any more complex kernels.
 
 For the decision tree, we can zoom in a little bit on what its learned.
 
-```{r Decision Tree Plot, eval=FALSE}
+```{r Decision Tree Plot, render=FALSE, results='hide'}
 png('dt-results.png')
 dtResults$fitted %>% plot(uniform = TRUE)
 text(dtResults$fitted, all = TRUE, cex = 1.0)
