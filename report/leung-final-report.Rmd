@@ -280,7 +280,26 @@ wines <- wines %>%
 
 ## Decision Trees
 
-## Support Vector Machine
+A decision tree, in the machine learning sense, is a method that partitions
+your data into "purer" groups. Your data is initially a group of heterogenous
+groups based on their response variable. Each partition of the sample space is
+supposed to increase the "purity" of that partition so that if you were to
+randomly select a sample, you would have a greater chance for one of the
+response categories than the others.
+
+Here I use the `rpart` package is run my decision tree analysis. According to
+the authors, their package is a reimplementation of Brienman, Friedman, Olshen,
+and Stone's classification and regression trees
+[@rpart, @breiman1984classification].
+
+There are two general steps in decision trees: growing the tree and pruning the
+tree. Growing the tree is essentially training the method, where you start
+partitioning the data. The pruning step is to prevent overfitting. Pruning is
+where you remove sections of your grown tree because those splits give little
+useful information.
+
+
+## Support Vector Machine (SVM)
 
 ## Naive Bayes Classifier
 
