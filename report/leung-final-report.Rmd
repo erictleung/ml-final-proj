@@ -325,6 +325,23 @@ I only implement the linear kernel for simplicity.
 
 ## Naive Bayes Classifier
 
+Unlike a support vector machine or decision tree, the Naive Bayes classifier is
+a probabilistic classifier. A Naive Bayes classifier also cannot do regression.
+
+This classifier takes advantage of the famous Bayes' Theorem
+
+$$P(A|B) = \frac{P(A|B)P(B)}{P(A)}$$
+
+whereby you provide a prior probability of an event happening.
+
+The prior in a classification sense is the training set you provide. For
+simplicity, I will assume each attribute follows a Gaussian normal distribution.
+Thus, I can model the prior probability with the Gaussian distribution. All I
+now need is to calculate the means and standard deviations for input parameters.
+
+For my case with two wine types to classify, I would take each type of wine and
+calculate for each attribute the mean and standard deviation.
+
 # Results
 
 ## Predict Red and White Wine
