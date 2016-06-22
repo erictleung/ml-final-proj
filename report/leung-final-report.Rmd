@@ -301,6 +301,28 @@ useful information.
 
 ## Support Vector Machine (SVM)
 
+Support vector machines are another method to do classification and regression
+analysis. Support vector machines are commonly abbreviated as SVMs. These work
+in a similar way to the decision tress where it partitions the data. In contrast
+to decision trees, SVMs performs just one "partition."
+
+The line that partitions your data is called the hyperplane. For a linear SVM,
+this hyperplane is defined as
+
+$$\overrightarrow{b} \cdot \overrightarrow{x} - b = 0$$
+
+where $\overrightarrow{w}$ is the normal vector to the hyperplane and
+$\overrightarrow{x}$ is a set of points.
+
+Hyperplanes can be linear, as mentioned above, or they can have a non-linear
+spin to it. Non-linear hyperplanes can be achieved by using different kernels.
+Some common kernels are polynomial, gaussian radial basis, and hyperbolic
+tangent.
+
+In my analysis, I will implement an SVM using the `e1071` R package [@e1071].
+I only implement the linear kernel for simplicity.
+
+
 ## Naive Bayes Classifier
 
 # Results
