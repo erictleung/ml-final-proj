@@ -75,15 +75,17 @@ white <- read.table(file = "../raw-data/winequality-white.csv",
 
 # Abstract
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tristique
-tortor eget ipsum porttitor consequat. Cras varius quam dui, a suscipit diam
-pellentesque ut. Aliquam malesuada elementum tellus, ac feugiat nulla. Phasellus
-facilisis viverra consectetur. Donec ullamcorper hendrerit ultrices. Vestibulum
-tempus mauris nec felis condimentum, a interdum tortor ullamcorper. Sed vel eros
-mauris. Nulla laoreet hendrerit lacus, vel efficitur magna fringilla eu. Fusce
-vestibulum sodales leo, at suscipit lectus. Maecenas eu ultricies erat, nec
-porta purus.
-
+There are many different wines, each with varying degrees of quality. This
+"quality" is difficult to measure because it is usually perceived by an
+individual. Here, I explore various machine learning methods in differentiating
+between red and white wines using measured physicochemical properties.
+Additionally, I try to predict wine quality based on these same measured
+properties. The methods I used are decision trees (a tree based method),
+support vector machine (non-probabilistic binary classifier), and naive Bayes
+(a probabilistic classifier). The prediction of wine type was accurate for all
+three methods I used. Prediction of wine quality only did slightly better than
+random. There will have to be more tuning of the methods to do better in quality
+prediction.
 
 # Introduction
 
