@@ -42,7 +42,6 @@ figure5 <- "Distribution of citric acid values for all wine data"
 figure6 <- "Distribution of raw chloride values for all wine data"
 figure7 <- paste("Distribution of the natural log transformation of chloride",
                  "values for all wine data")
-dtPlot <- paste("")
 figList <- c("figure1", "figure2", "figure3", "compareFixed", "compareChloride",
              "figure4", "figure5", "figure6", "figure7", "dtPlot")
 ```
