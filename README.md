@@ -9,8 +9,16 @@ quality and wine type based on physiochemical measurements.
 - cURL
 - make
 - [R][r] (>= 3.2.3)
+    - [rpart][rpart] (>= 4.1-10)
+    - [rmarkdown][rmd] (>= 0.9.6)
+    - [knitr][knitr] (>= 1.13)
+    - [e1071][e1071] (>= 1.6-7)
 
 [r]: https://www.r-project.org/
+[rpart]: https://cran.r-project.org/web/packages/rpart/index.html
+[rmd]: https://cran.r-project.org/web/packages/rmarkdown/index.html
+[knitr]: https://cran.r-project.org/web/packages/knitr/index.html
+[e1071]: https://cran.r-project.org/web/packages/e1071/index.html
 
 
 ## Run Analysis and Create Report
