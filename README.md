@@ -13,9 +13,12 @@ quality and wine type based on physiochemical measurements.
 [r]: https://www.r-project.org/
 
 
-## Run Analysis
+## Run Analysis and Create Report
 
-TBD
+```shell
+git clone https://github.com/erictleung/ml-final-proj.git
+make report
+```
 
 
 ## Data
