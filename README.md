@@ -37,7 +37,7 @@ and ten.
 [wine]: http://archive.ics.uci.edu/ml/datasets/Wine+Quality
 
 
-## Questions Asked (Draft)
+## Questions Asked
 
 - Putting the data together, can we distinguish between white and red wine?
 - Can we predict perceived wine quality based on the input variables?
