@@ -48,4 +48,18 @@ and ten.
 
 ## Repository Structure
 
-TBD
+```
+.
+├── Makefile
+├── README.md
+├── bin
+│   ├── decision-trees.R
+│   ├── naive-bayes.R
+│   ├── splitdf.R
+│   └── svm.R
+└── report
+    ├── leung-final-report.Rmd
+    └── refs.bib
+
+2 directories, 8 files
+```
